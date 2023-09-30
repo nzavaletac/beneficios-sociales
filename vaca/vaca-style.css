@@ -1,0 +1,12 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  /* font-family: "Pixelify Sans", cursive; */
+  font-family: "Rajdhani", sans-serif;
+}
+
+body {
+  height: 100vh;
+}

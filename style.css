@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  /* font-family: "Pixelify Sans", cursive; */
+  font-family: "Rajdhani", sans-serif;
+}
+
+body {
+  height: 100vh;
+}
+
+.container {
+  padding: 30px;
+}
+
+.boxes {
+  text-align: center;
+  align-items: center;
+  padding: 20px;
+  height: auto;
+}
+
+.texto {
+  text-align: justify;
+  padding: 1.5em;
+}
