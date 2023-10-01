@@ -72,37 +72,42 @@
         <div class="col-12 fila">
           <label for="" class="form-label">Sueldo Básico</label>
           <input
-            type="number"
+            type="text"
             class="form-control"
             id="sueldo"
-            placeholder="1500"
+            onkeyup="sumar()"
+            value="0.00"
+            onFocus="if(this.value=='0.00') this.value=''"
+            onblur="if(this.value=='') this.value='0.00';"
           />
         </div>
         <div class="col-12 fila">
           <label for="" class="form-label">Asignación Familiar</label>
-          <select class="form-select" name="asignacion" id="asignacion">
+          <select
+            class="form-select"
+            name="asignacion"
+            id="asignacion"
+            onkeyup="sumar()"
+          >
             <option value="0.00">No</option>
-            <option value="102">Si</option>
+            <option value="102.50">Si</option>
           </select>
         </div>
         <div class="col-12 fila">
           <label for="" class="form-label">1/6 Gratificación</label>
           <input
-            type="number"
+            type="text"
             class="form-control"
             id="sexto-grati"
-            placeholder="500"
+            onkeyup="sumar()"
+            value="0.00"
+            onFocus="if(this.value=='0.00') this.value='';"
+            onblur="if(this.value=='') this.value='0.00';"
           />
         </div>
         <div class="col-12 fila">
           <label for="" class="form-label">Remuneración Computable</label>
-          <input
-            type="number"
-            class="form-control"
-            id="computable"
-            placeholder="500"
-            disabled
-          />
+          <input class="form-control" id="computable" disabled />
         </div>
         <div class="col-12 fila">
           <label for="" class="form-label">Fecha Inicio</label>
@@ -137,5 +142,18 @@
         </div>
       </div>
     </div>
+    <script>
+      function sumar() {
+        const sueldo = parseFloat(document.getElementById("sueldo").value);
+        const sextoGrati = parseFloat(
+          document.getElementById("sexto-grati").value
+        );
+        const asignacion = parseFloat(
+          document.getElementById("asignacion").value
+        );
+        document.getElementById("computable").value =
+          0.0 + sueldo + asignacion + sextoGrati + 0.0;
+      }
+    </script>
   </body>
 </html>
